@@ -1,0 +1,201 @@
+<html>
+<head>
+    <title>Learning Website</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js">
+    </script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCTB6PppqmclOHeL-x_jf51pm2CFlIg3SM",
+            authDomain: "fir-project-dc569.firebaseapp.com",
+            databaseURL: "https://fir-project-dc569.firebaseio.com",
+            projectId: "fir-project-dc569",
+            storageBucket: "fir-project-dc569.appspot.com",
+            messagingSenderId: "1050134721532"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!--main js-->
+    <script src="app.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+<body>
+
+    <header>
+
+    <div class="jumbotron" id="firstJumbo">
+        <div id="particles-js"></div>
+        <div class="container" id="topCont">               
+            <h1 class="display-3">Welcome to 123Hamster!</h1>
+            <p>Where we're teaching kids new concepts at the click of a button!</p>
+            <a class="btn btn-primary btn-lg btmjumboopen" href="#bottomJumbo" role="button" id="start" style="font-size: 35px;">Get Started</a>
+        </div>
+    </div>
+    </header>
+
+<div class="animated zoomIn" id="cates"> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="text-align: center; margin-bottom: 5px;"><button class="btn btn-primary" type="button" style="font-size: 125px; width: 550px;" id="math">MATH</button></div>
+        <div class="col-md-6" style="text-align: center;"><button class="btn btn-primary" type="button" style="width: 595px; font-size: 125px;" id="read">READING</button></div>
+    </div>
+</div>
+</div>
+
+<div class="animated zoomIn" id="mathey"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" style="text-align: center;"><button class="btn btn-primary" type="button" style="width: 250px; height: 150px; font-size: 25px;" id="add">ADDITION</button></div>
+            <div class="col-md-3" style="text-align: center;"><button class="btn btn-primary" type="button" style="width: 250px; height: 150px; font-size: 25px;" id="sub">SUBTRACTION</button></div>
+            <div class="col-md-3" style="text-align: center;"><button class="btn btn-primary" type="button" style="width: 250px; height: 150px; font-size: 25px;" id="multi">MULTIPLICATION</button></div>
+            <div class="col-md-3" style="text-align: center;"><button class="btn btn-primary" type="button" style="width: 250px; height: 150px; font-size: 25px;" id="divi">DIVISION</button></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div class="container-fluid">
+
+    <div class="container" id="bar">
+
+        <div class="animated zoomIn" id="someWords">
+        <h1>Here are some words!</h1>
+        <div class="barShort"></div>
+        </div>
+    </div>
+
+<div class="container">
+<div class="breaddd">
+    <div class="animated zoomIn">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8"><center>
+                    <h1 id="wordran"></h1><a type="button" role="button" id="audio"><img src="picric.png" style="width: 20px; height: 20px;"></a></center>
+                <center>
+                    <h2 id="pronounce"></h2>
+                </center>
+                <center>
+                    <h3 id="defini"></h3>
+                </center></div>
+                <div class="col-md-2"></div>
+                
+                </div>
+               
+        </div>
+        <center id="botRow"><button class='btn btn-primary' id="practice" style="margin-bottom: 15px;">Practice</button><button class='btn btn-primary' id="new" style="margin-left: 10px; margin-bottom: 15px;">New Word</button></center>
+    </div>
+    </div>
+</div>
+
+</div>
+
+<div class="Search">
+    
+   <div class="row">
+       <div class="col-md-4"></div>
+       <div class="col-md-4" style="text-align: center;"><form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Spell the Word" aria-label="Search" id="userInput" autocomplete="off">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="attempt">Submit</button>
+    </form></div>
+       <div class="col-md-4"></div> 
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" id="scoresss"><center><h2>Total Points: </h2></center><center><h1 id="score"></h1></center></div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="userContainer">
+        <form id="data">
+            <div class="textContainer">
+                <div>
+                    <p>Your name:</p><input id="name" type="text">
+                </div>
+            </div>
+            <div class="GObutton">
+                <input type="reset" onclick="updateDB();" value="Submit/Update">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div id="addthat">
+    <div class="animated zoomIn">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">  <div class="panel panel-default">
+                    <div class="panel-body">
+                        <center><h1 id="problem" style="font-size: 50pt;"></h1></center>
+                        <center><button class="btn btn-primary" id="newmath" style="margin-bottom: 15px;">New Problem</button>
+                    </div>
+                  </div></div>
+            <div class="col-md-2"></div>
+        </div>
+      <center> <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Your Answer" aria-label="Search" id="addans" autocomplete="off" style="font-size: 20pt; width: 600px;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="addatt" style="font-size: 20pt;">Submit</button>
+            </form></center>
+</div>
+</div>
+
+<div id="mathscore">
+    <div class="animated zoomIn">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3" style="text-align: center;"><h2>Correct:</h2><h1 id="correctss"></h1></div>
+        <div class="col-md-3" style="text-align: center;"><h2>Fails:</h2><h1 id="incorrectss"></h1></div>
+        <div class="col-md-3"></div>
+    </div>
+    </div>
+</div>
+
+
+<div id="ubbtt">
+    <div class="animated zoomIn">
+    <div class="row">
+        <div class="col-md-3"><button class="btn btn-primary" id="return">Return to Categories</button></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        
+        <script src="part.js"></script>
+</body>
+</html>
