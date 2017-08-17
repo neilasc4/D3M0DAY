@@ -14,7 +14,7 @@
 }
 
 .barShort{
-    background-color: white;
+    /* background-color: white; */
     max-width: 40%;
     height: 3px;
     margin: 25px auto;
@@ -39,7 +39,7 @@
 } */
 
 #firstJumbo{
-    background-image: url("kids-in-class4.jpg");
+    background-image: url("http://i.imgur.com/SvnuN4M.png");
     background-size: cover;
     padding-top: 250px;
     padding-bottom: 500px;  
@@ -51,7 +51,7 @@
 
 #topCont{
     padding-top: 100px;
-    color: white
+    /* color: white; */
 }
 #topCont h1{
     font-size: 90px;
@@ -71,6 +71,7 @@
 
 #data{
     text-align: right;
+    font-size: 20px;
 }
 
 body
@@ -78,14 +79,15 @@ body
     background: linear-gradient(pink, lightblue);
 }
 
-#someWords h1{
+/* #someWords h1{
     color: white;
-}
+} */
 
-#scoresss{
+/* #scoresss{
     color: white;
-}
+} */
 
 #scoresss h3{
     font-size: 40px;
 }
+

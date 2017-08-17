@@ -12,6 +12,14 @@ function updateDB(){
     database.push(value)
 }
 
+database.on("child_added", function(rowData){
+    var row = rowData.val();
+    var name = row.NAME;
+    var score = row.SCORE;
+    var fulltext = "<tr><td>"+name+"</td><td>"+score+"</td></tr>";
+    $("#realb").append(fulltext);
+});
+
 var points = 0;
 var correct = 0;
 var incorrect = 0;
@@ -20,7 +28,8 @@ function setup(){
 
     
     $('#score').html(points);
-
+    $('#leaderboards').hide();
+    $('.Leaderboard').hide();
     $('#cates').hide();
     $('#logo').hide();
     $('.breaddd').hide();
@@ -35,6 +44,7 @@ function setup(){
     $('#multithat').hide();
     $('#ubbtt1').hide();
     $('#ubbtt2').hide();
+    $('#backc').hide();
 
     var words = ["cat", "dog", "rat", "mouse", "hamster","summer","stall","throughput","operator","darling","whale","bell","water","boat","beach"]
 
@@ -50,11 +60,16 @@ function setup(){
     var trombo = new Audio('audio/fail/sadtrombone.mp3')
 
     var failsound = [yourwrong,frog,trombo];
+   
+    // $('#practice').click(function(){
+    //     $('#return').hide();
+
+    // });
 
     $('#start').click(function(){
         $('#firstJumbo').css("padding-bottom", "130px");
         $('#firstJumbo').css("padding-top", "20px");
-        $('#particles-js').css("height", "100vh");
+        $('#particles-js').css("height", "65vh");
 
         $('#start').hide();
 
@@ -168,6 +183,7 @@ function setup(){
             $('.panel-body').css('background-color', '78f177');
             $('#botRow').css('background-color', '78f177');
             $('#ubbtt').hide();
+            $('#multiii').hide();
         }else{
             incorrect = incorrect + 1;
             $('#incorrectss').html(incorrect);
@@ -203,6 +219,7 @@ function setup(){
         $('.panel-body').css('background-color', 'white');
         $('#botRow').css('background-color', 'white');
         $('#ubbtt').show();
+        $('#multiii').show();
     })
 
     var add1 = Math.floor(Math.random()*50);
@@ -356,6 +373,8 @@ function setup(){
         $('#practice').show();
         $('.panel-body').css('background-color', 'white');
         $('#botRow').css('background-color', 'white');
+        $('#ubbtt2').show();
+        $('#leaderboards').hide();
 
         if (random === "cat") {
             $('#defini').html("Definition: a small domesticated carnivorous mammal with soft fur, a short snout and retractile claws. Normally kept as a pet.");
@@ -463,6 +482,32 @@ function setup(){
             playafail.play();
         }
         userInput = '';
+
+    });
+    $('#leaderboards').click(function(){
+        $('.breaddd').hide();
+        $('#bar').hide();
+        $('.Search').hide();
+        $('.Leaderboard').show();
+        $('#backc').show();
+    });
+
+    $('#backc').click(function(){
+        $('.Leaderboard').hide();
+        $('.Search').show();
+        $('.breaddd').show();
+        $('#backc').hide();
+        $('#bar').show();
+        $('.panel-body').css('background-color', 'white');
+        $('#botRow').css('background-color', 'white');
+    })
+
+    $('#subfire').click(function(){
+        $('#leaderboards').show();
+    });
+
+    $('#practice').click(function () {
+        $('#ubbtt2').hide();
 
     });
 
