@@ -21,7 +21,7 @@ function setup(){
     
     $('#score').html(points);
 
-$('#cates').hide();
+    $('#cates').hide();
     $('#logo').hide();
     $('.breaddd').hide();
     $('.Search').hide();
@@ -31,6 +31,10 @@ $('#cates').hide();
     $('#newmath').hide();
     $('#mathscore').hide();
     $('#ubbtt').hide();
+    $('#subthat').hide();
+    $('#multithat').hide();
+    $('#ubbtt1').hide();
+    $('#ubbtt2').hide();
 
     var words = ["cat", "dog", "rat", "mouse", "hamster","summer","stall","throughput","operator","darling","whale","bell","water","boat","beach"]
 
@@ -60,21 +64,156 @@ $('#cates').hide();
     $('#math').click(function(){
         $('#cates').hide();
         $('#mathey').show();
+        $('#ubbtt1').show();
     });
 
     $('#add').click(function(){
         $('#mathey').hide();
         $('#addthat').show();
-        $('#problem').html(num1 + ' + ' + num2 + " = ");
+        $('#problem').html(add1 + ' + ' + add2 + " = ");
         $('#mathscore').show();
         $('#correctss').html(correct);
         $('#incorrectss').html(incorrect);
         $('#ubbtt').show();
+        $('#addii').show();
+        $('#newmath').hide();
+        $('#ubbtt1').hide();
     })
 
-    var num1 = Math.floor(Math.random()*50);
-    var num2 = Math.floor(Math.random()*50);
-    var solution = num1 + num2;
+    $('#ubbtt').click(function(){
+        $('#mathey').show();
+        $('#subthat').hide();
+        $('#addthat').hide();
+        $('#multithat').hide();
+        $('#mathscore').hide();
+        $('#ubbtt').hide();
+        $('#ubbtt1').show();
+        $('.panel-body').css('background-color', 'white');
+        $('#botRow').css('background-color', 'white');
+    })
+
+    $('#ubbtt1').click(function(){
+        $('#mathey').hide();
+        $('#cates').show();
+        $('#ubbtt1').hide();
+    })
+
+    $('#sub').click(function(){
+        $('#mathey').hide();
+        $('#subthat').show();
+        $('#problem1').html(sub1 + ' - ' + sub2 + " = ");
+        $('#mathscore').show();
+        $('#correctss').html(correct);
+        $('#incorrectss').html(incorrect);
+        $('#ubbtt').show();
+        $('#newmath1').hide();
+        $('#subii').show();
+        $('#ubbtt1').hide();
+    })
+
+    $('#multi').click(function(){
+        $('#mathey').hide();
+        $('#multithat').show();
+        $('#problem2').html(mul1 + ' x ' + mul2 + " = ");
+        $('#mathscore').show();
+        $('#correctss').html(correct);
+        $('#incorrectss').html(incorrect);
+        $('#ubbtt').show();
+        $('#newmath2').hide();
+        $('#multiii').show();
+        $('#ubbtt1').hide();
+    })
+
+    $('#ubbtt2').click(function(){
+        $('#cates').show();
+        $('.breaddd').hide();
+        $('#bar').hide();
+        $('#ubbtt2').hide();
+    })
+
+    $('#subatt').click(function(){
+        var attempt = document.getElementById("subans").value;
+        if(attempt == subsol){
+            $('#subatt').hide();
+            $('#problem1').append(subsol);
+            $('#newmath1').show();
+            $('#subans').hide();
+            correct = correct + 1;
+            $('#correctss').html(correct);
+            yourright.play();
+            $('.panel-body').css('background-color', '78f177');
+            $('#botRow').css('background-color', '78f177');
+            $('#ubbtt').hide();
+        }else{
+            incorrect = incorrect + 1;
+            $('#incorrectss').html(incorrect);
+            var playafail = failsound[Math.floor(Math.random()*3)];
+            playafail.play();
+            $('.panel-body').css('background-color', 'red');
+            $('#botRow').css('background-color', 'red');
+            $('#ubbtt').hide();
+        }
+    });
+    
+    $('#multiatt').click(function(){
+        var attempt = document.getElementById("multians").value;
+        if(attempt == mulsol){
+            $('#multiatt').hide();
+            $('#problem2').append(mulsol);
+            $('#newmath2').show();
+            $('#mulans').hide();
+            correct = correct + 1;
+            $('#correctss').html(correct);
+            yourright.play();
+            $('.panel-body').css('background-color', '78f177');
+            $('#botRow').css('background-color', '78f177');
+            $('#ubbtt').hide();
+        }else{
+            incorrect = incorrect + 1;
+            $('#incorrectss').html(incorrect);
+            var playafail = failsound[Math.floor(Math.random()*3)];
+            playafail.play();
+            $('.panel-body').css('background-color', 'red');
+            $('#botRow').css('background-color', 'red');
+            $('#ubbtt').hide();
+        }
+    });
+
+    $('#newmath1').click(function(){
+        $('#newmath1').hide();
+        $('#subatt').show();
+        sub1 = Math.floor(Math.random()*50);
+        sub2 = Math.floor(Math.random()*50);
+        subsol = sub1 - sub2;
+        $('#problem1').html(sub1 + ' - ' + sub2 + " = ");
+        $('#subans').show();
+        $('.panel-body').css('background-color', 'white');
+        $('#botRow').css('background-color', 'white');
+        $('#ubbtt').show();
+    })
+
+    $('#newmath2').click(function(){
+        $('#newmath2').hide();
+        $('#multiatt').show();
+        mul1 = Math.floor(Math.random()*50);
+        mul2 = Math.floor(Math.random()*50);
+        mulsol = mul1 * mul2;
+        $('#problem2').html(mul1 + ' x ' + mul2 + " = ");
+        $('#multians').show();
+        $('.panel-body').css('background-color', 'white');
+        $('#botRow').css('background-color', 'white');
+        $('#ubbtt').show();
+    })
+
+    var add1 = Math.floor(Math.random()*50);
+    var add2 = Math.floor(Math.random()*50);
+    var sub1 = Math.floor(Math.random()*50);
+    var sub2 = Math.floor(Math.random()*50);
+    var mul1 = Math.floor(Math.random()*25);
+    var mul2 = Math.floor(Math.random()*25);
+    var solution = add1 + add2;
+    var subsol = sub1 - sub2;
+    var mulsol = mul1*mul2;
 
     $('#addatt').click(function(){
         var attempt = document.getElementById("addans").value;
@@ -88,6 +227,7 @@ $('#cates').hide();
             yourright.play();
             $('.panel-body').css('background-color', '78f177');
             $('#botRow').css('background-color', '78f177');
+            $('#ubbtt').hide();
         }else{
             incorrect = incorrect + 1;
             $('#incorrectss').html(incorrect);
@@ -95,25 +235,28 @@ $('#cates').hide();
             playafail.play();
             $('.panel-body').css('background-color', 'red');
             $('#botRow').css('background-color', 'red');
+            $('#ubbtt').hide();
         }
     });
 
     $('#newmath').click(function(){
         $('#newmath').hide();
         $('#addatt').show();
-        num1 = Math.floor(Math.random()*50);
-        num2 = Math.floor(Math.random()*50);
-        solution = num1 + num2;
-        $('#problem').html(num1 + ' + ' + num2 + " = ");
+        add1 = Math.floor(Math.random()*50);
+        add2 = Math.floor(Math.random()*50);
+        solution = add1 + add2;
+        $('#problem').html(add1 + ' + ' + add2 + " = ");
         $('#addans').show();
         $('.panel-body').css('background-color', 'white');
         $('#botRow').css('background-color', 'white');
+        $('#ubbtt').show();
     })
 
     $('#read').click(function(){
         $('#cates').hide();
         $('.breaddd').show();
         $('#bar').show();
+        $('#ubbtt2').show();
         $('#wordran').html(random);
         
                 if (random === "cat") {
@@ -323,6 +466,9 @@ $('#cates').hide();
 
     });
 
+    $('#divi').click(function(){
+        alert("Currently Unavailable");
+    })
 
     $('#audio').click(function(){
         sounding.play();
