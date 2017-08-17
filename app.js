@@ -60,11 +60,6 @@ function setup(){
     var trombo = new Audio('audio/fail/sadtrombone.mp3')
 
     var failsound = [yourwrong,frog,trombo];
-   
-    // $('#practice').click(function(){
-    //     $('#return').hide();
-
-    // });
 
     $('#start').click(function(){
         $('#firstJumbo').css("padding-bottom", "130px");
@@ -362,11 +357,19 @@ function setup(){
         $('#practice').hide();
         $('#new').hide();
         $("#userInput").show();
+        $('#ubbtt2').hide();
+        $('.textContainer').show();
+        $('.GObutton').show();
+        $('#subfire').show();
+        $('#importo').show();
+        $('#usure').show();
     })
 
     $('#new').click(function () {
         random = words[Math.floor(Math.random() * 15)];
         console.log(random);
+
+        $('#audio').show();
 
         $('#wordran').html(random);
         $('#wordran').show();
@@ -500,15 +503,23 @@ function setup(){
         $('#bar').show();
         $('.panel-body').css('background-color', 'white');
         $('#botRow').css('background-color', 'white');
+        $('#defini').html('Press "New Word" to continue!');
+        $('#pronounce').html(" ");
+        $('#audio').hide();
+        $('.textContainer').hide();
+        $('.GObutton').hide();
+        points = 0;
+        $('#score').html(points);
+        $('#new').show();
     })
 
     $('#subfire').click(function(){
         $('#leaderboards').show();
-    });
-
-    $('#practice').click(function () {
-        $('#ubbtt2').hide();
-
+        $('.textContainer').hide();
+        $('#subfire').hide();
+        $('#importo').hide();
+        $('#usure').hide();
+        $('#new').hide();
     });
 
     $('#divi').click(function(){
