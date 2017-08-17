@@ -3,7 +3,6 @@ var database = firebase.database().ref();
 function updateDB(){
     var name = $("#name").val();
     var score = points;
-    console.log(name + " : " + score);
 
     var value = {
         NAME: name,
@@ -367,7 +366,6 @@ function setup(){
 
     $('#new').click(function () {
         random = words[Math.floor(Math.random() * 15)];
-        console.log(random);
 
         $('#audio').show();
 
@@ -462,11 +460,8 @@ function setup(){
     $('#attempt').click(function () {
         var userInput = document.getElementById("userInput").value;
 
-        console.log(userInput);
-        console.log(random);
 
         if(userInput === random){
-            console.log("Correct")
             points = points + 10;
             $('#score').html(points);
             $('#attempt').hide();
@@ -476,7 +471,6 @@ function setup(){
             $('#botRow').css('background-color', '78f177');
             yourright.play();
         }else{
-            console.log("Incorrect")
             points = points - 5;
             $('#score').html(points);
             $('.panel-body').css('background-color', 'red');
